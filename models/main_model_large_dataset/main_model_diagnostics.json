@@ -1,0 +1,51 @@
+{
+  "split_integrity": {
+    "athletes_checked": 3000,
+    "violations": 0,
+    "ok": true
+  },
+  "baseline_constant_prevalence": {
+    "val_logloss": 0.35923553967365857,
+    "val_brier": 0.10249947417951928,
+    "val_auc": null
+  },
+  "user_rate_baseline_forward_time": {
+    "n_val": 79020,
+    "auc": 0.6064311844178267,
+    "logloss": 0.6480953716074708,
+    "p_mean": 0.10245839077567633,
+    "y_mean": 0.1157048848392812
+  },
+  "probability_spread": {
+    "forward_time_val": {
+      "n": 79020,
+      "mean": 0.0928941407550848,
+      "std": 0.04977650699163656,
+      "min": 0.04507067381031692,
+      "p01": 0.04627872156425324,
+      "p05": 0.0486007668519725,
+      "p50": 0.07483964879098559,
+      "p95": 0.2008003370179791,
+      "p99": 0.25993836122285635,
+      "max": 0.3710956097392132
+    },
+    "random_val": {
+      "n": 79020,
+      "mean": 0.10434404447992779,
+      "std": 0.08652989921024923,
+      "min": 0.003997036800640785,
+      "p01": 0.016226395326364326,
+      "p05": 0.029425791088367917,
+      "p50": 0.07569712975044464,
+      "p95": 0.2768928062363644,
+      "p99": 0.4307889382272672,
+      "max": 0.8831046593752414
+    }
+  },
+  "random_vs_forward_auc_gap": 0.058779979408106864,
+  "notes": [
+    "If random split AUC is much higher than forward-time AUC, labels may be dominated by per-user propensity (or strong time drift).",
+    "If probability spread on forward-time is tiny (p95 ~ p50), the model is effectively predicting a constant rate.",
+    "Use delta/z features (included by default) so the main_model can learn within-athlete deviations (more realistic for forward-time)."
+  ]
+}

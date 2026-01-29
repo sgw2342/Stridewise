@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "n_features": 335,
+  "n_rows": 395693,
+  "label": "injury_next_7d",
+  "nan_rate_max": 1.0,
+  "nan_rate_mean": 0.023909550563302302,
+  "forward_time_auc_val": 0.713633603381812,
+  "random_auc_val": 0.7724135827899189
+}

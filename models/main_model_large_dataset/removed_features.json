@@ -1,0 +1,25 @@
+{
+  "removed_count": 313,
+  "removed_features": [
+    "proneness_x_fatigue",
+    "return_period_duration",
+    "training_load_sum28",
+    "high_intensity_days_last_7d",
+    "pace_easy_minpkm",
+    "hi_share",
+    "acwr_x_fitness",
+    "km_total_mean7",
+    "sprinting_x_fatigue",
+    "perceived_recovery",
+    "intensity_spike_7d",
+    "duration_min_sum7",
+    "intensity_x_acwr",
+    "profile",
+    "vo2max_adjusted",
+    "spike_x_fatigue_state",
+    "double_sessions_count_14d",
+    "spike_any",
+    "sprinting_abs_risk_log",
+    "perceived_trainingSuccess"
+  ]
+}
