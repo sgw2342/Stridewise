@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "id_col_candidates": [
+    "maskedID",
+    "athlete_id",
+    "Athlete ID",
+    "user_id",
+    "id"
+  ],
+  "label_col_candidates": [
+    "injury_next_7d",
+    "y",
+    "label",
+    "injury"
+  ],
+  "row_idx_col": "row_idx",
+  "day_window": {
+    "suffixes": [
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "description": ".6=day before event day; base column (no suffix)=7 days before (day 0)"
+  },
+  "week_window": {
+    "suffixes": [
+      "0",
+      "1",
+      "2"
+    ],
+    "description": ".0=week before; .2=three weeks before"
+  },
+  "day_features": [
+    "nr. sessions",
+    "total km",
+    "km Z3-4",
+    "km Z5-T1-T2",
+    "km sprinting",
+    "strength training",
+    "hours alternative",
+    "perceived exertion",
+    "perceived trainingSuccess",
+    "perceived recovery"
+  ],
+  "week_features": [
+    "total_kms_week",
+    "total_sessions_week",
+    "total_strength_week",
+    "total_hours_alternative_week",
+    "total_kms_z3_4_week",
+    "total_kms_z5_t1_t2_week",
+    "total_kms_sprinting_week",
+    "rel_total_kms_week",
+    "rel_total_kms_z3_4_week",
+    "rel_total_kms_z5_t1_t2_week"
+  ],
+  "subjective_rest_value": -0.01,
+  "subjective_missing_strategy": "treat -0.01 as missing + add missing indicators",
+  "rest_day_strategy": "rest_day_dk = (sessions.dk==0) OR (kms.dk==0)",
+  "ratio_transform": {
+    "clip_min": 0.0,
+    "clip_max": 4.0,
+    "log1p": true
+  }
+}
