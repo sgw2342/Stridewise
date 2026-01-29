@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Sample Data - Injury Risk Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Create Sample Training Data</h1>
+            <p class="subtitle">Generate 90 days of synthetic training data</p>
+        </header>
+
+        <main>
+            <div id="config-form-container">
+                <form id="data-config-form">
+                    <div class="info-box">
+                        <p><strong>Default Configuration:</strong> 3 easy runs per week</p>
+                        <p>Customize your training for the previous 7-day period below:</p>
+                    </div>
+
+                    <!-- Sprint Training -->
+                    <div class="form-section">
+                        <label class="checkbox-label-large">
+                            <input type="checkbox" id="include-sprint" name="include_sprint">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">1. Include Sprint Training</span>
+                        </label>
+                        
+                        <div id="sprint-details" class="conditional-section hidden">
+                            <div class="form-group">
+                                <label for="sprint-sessions">How many sprint sessions?</label>
+                                <input type="number" id="sprint-sessions" name="sprint_sessions" min="0" max="7" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="sprint-kms">How many KMs of sprinting?</label>
+                                <input type="number" id="sprint-kms" name="sprint_kms" min="0" max="50" step="0.1" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Long Runs -->
+                    <div class="form-section">
+                        <label class="checkbox-label-large">
+                            <input type="checkbox" id="include-long" name="include_long">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">2. Include Long Runs</span>
+                        </label>
+                        
+                        <div id="long-details" class="conditional-section hidden">
+                            <div class="form-group">
+                                <label for="long-sessions">How many long run sessions?</label>
+                                <input type="number" id="long-sessions" name="long_sessions" min="0" max="7" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="long-distance">How long will the run be (km)?</label>
+                                <input type="number" id="long-distance" name="long_distance" min="0" max="50" step="0.1" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tempo Runs -->
+                    <div class="form-section">
+                        <label class="checkbox-label-large">
+                            <input type="checkbox" id="include-tempo" name="include_tempo">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">3. Include Tempo Runs</span>
+                        </label>
+                        
+                        <div id="tempo-details" class="conditional-section hidden">
+                            <div class="form-group">
+                                <label for="tempo-sessions">How many tempo run sessions?</label>
+                                <input type="number" id="tempo-sessions" name="tempo_sessions" min="0" max="7" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="tempo-zone">What zone is your tempo run in?</label>
+                                <select id="tempo-zone" name="tempo_zone">
+                                    <option value="3">Zone 3 (Aerobic)</option>
+                                    <option value="4">Zone 4 (Threshold)</option>
+                                    <option value="5">Zone 5 (VO2 Max)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tempo-kms">How many KMs of tempo?</label>
+                                <input type="number" id="tempo-kms" name="tempo_kms" min="0" max="50" step="0.1" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Configuration</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Configuration Saved State -->
+            <div id="config-saved" class="config-saved hidden">
+                <div class="success-message">
+                    <span class="success-icon">✅</span>
+                    <h2>Configuration Saved</h2>
+                    <p>Your week configuration has been saved successfully.</p>
+                    <p class="regenerate-note">Data has been generated. You can regenerate it with updated settings if needed.</p>
+                </div>
+                
+                <div class="saved-actions">
+                    <button type="button" class="btn-secondary" id="edit-config-btn">Edit Configuration</button>
+                    <button type="button" class="btn-regenerate" id="regenerate-data-btn">🔄 Regenerate Data</button>
+                    <button type="button" class="btn-primary" id="return-home-btn">Return to Home</button>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Saving configuration...</p>
+            </div>
+
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <footer>
+            <p>This tool provides general guidance only. Always consult a healthcare professional for medical advice.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/create_data.js') }}"></script>
+</body>
+</html>

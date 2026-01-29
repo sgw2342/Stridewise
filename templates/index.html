@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injury Risk Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏃 Injury Risk Assessment</h1>
+            <p class="subtitle">Daily training readiness check</p>
+        </header>
+
+        <main>
+            <!-- Data Source Selection -->
+            <div id="data-source-section" class="data-source-section">
+                <h2>Connect Your Data</h2>
+                <p class="section-description">Choose how you'd like to provide your training data:</p>
+                
+                <div class="action-buttons">
+                    <button type="button" class="btn-action" id="connect-garmin-btn">
+                        <span class="btn-icon">⌚</span>
+                        <span class="btn-text">Connect Garmin Account</span>
+                    </button>
+                    <button type="button" class="btn-action" id="create-sample-btn">
+                        <span class="btn-icon">📊</span>
+                        <span class="btn-text">Create Sample Data</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Daily Assessment Form (shown after data source is selected) -->
+            <form id="prediction-form" class="hidden">
+                <div class="form-section">
+                    <h2>How are you feeling today?</h2>
+                    
+                    <div class="question-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="illness" name="illness">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">I'm feeling ill or unwell</span>
+                        </label>
+                    </div>
+                    
+                    <div class="question-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="pains" name="pains">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">I have pains or issues related to my training</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions-main">
+                    <button type="submit" class="btn-primary">Get Assessment</button>
+                    <button type="button" class="btn-secondary" id="back-to-data-btn">Edit Training Data</button>
+                </div>
+            </form>
+
+            <div id="result" class="result-container hidden">
+                <div id="result-icon" class="result-icon"></div>
+                <div id="result-message" class="result-message"></div>
+                <div id="result-details" class="result-details"></div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing your risk...</p>
+            </div>
+
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <!-- Garmin Connection Dialog -->
+        <div id="garmin-dialog" class="modal hidden">
+            <div class="modal-content">
+                <span class="modal-close" id="close-garmin-dialog">&times;</span>
+                <h2>Garmin Connection</h2>
+                <p>This feature is not yet implemented. We're working on integrating with Garmin Connect API.</p>
+                <button type="button" class="btn-primary" id="close-garmin-btn">OK</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>This tool provides general guidance only. Always consult a healthcare professional for medical advice.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
