@@ -145,9 +145,9 @@ class GeneratorConfig:
     # REDUCED: Target injury rate ~2.00% (down from 3.62%)
     # Reduction factor: 0.5525 (44.8% reduction) - maintains proportional relationships
     # Values are daily probabilities that will be added to p_inj
-    spike_absolute_risk_small: float = 0.04331    # INCREASED: Strengthen spike-injury association for ALL profiles (+12% from 0.03867) to reach AUC ≥0.70
-    spike_absolute_risk_moderate: float = 0.04950  # INCREASED: Strengthen spike-injury association for ALL profiles (+12% from 0.04420) to reach AUC ≥0.70
-    spike_absolute_risk_large: float = 0.06188    # INCREASED: Strengthen spike-injury association for ALL profiles (+12% from 0.05525) to reach AUC ≥0.70
+    spike_absolute_risk_small: float = 0.04331    
+    spike_absolute_risk_moderate: float = 0.04950  
+    spike_absolute_risk_large: float = 0.06188   
     # PHASE 3 (BEST CONFIG): Optimal balance found through testing
     # Best result: 15% reduction gave ROC AUC 0.5884 (94.3% of target), PR AUC 0.0264 (98.5% of target)
     # This maintains strong signal while keeping associations in +50-100% range
