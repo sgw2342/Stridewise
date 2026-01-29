@@ -393,7 +393,7 @@ See `requirements.txt` and `requirements_app.txt` for complete lists.
 
 ## License
 
-[Specify your license here]
+All rights reserved StrideWise 2026
 
 ---
 
@@ -414,4 +414,4 @@ For issues, questions, or contributions, please [specify contact method].
 
 ---
 
-**Last Updated**: 2024
+**Last Updated**: 2026
