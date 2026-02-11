@@ -1,0 +1,122 @@
+{
+  "summary": {
+    "users": 1,
+    "daily_rows": 90,
+    "activities": 77,
+    "injury_rate_by_user": {
+      "n_users": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "p05": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "ok": false
+  },
+  "checks": [
+    {
+      "name": "RHR range",
+      "ok": true,
+      "details": {
+        "min": 56.54049034270132,
+        "max": 67.4416127750455,
+        "pct_in_range": 1.0
+      }
+    },
+    {
+      "name": "HRV range",
+      "ok": true,
+      "details": {
+        "min": 15.411725450640567,
+        "max": 51.24514664035269,
+        "pct_in_range": 1.0
+      }
+    },
+    {
+      "name": "ACWR reasonable",
+      "ok": true,
+      "details": {
+        "p99": 1.2360488291750351,
+        "mean": 0.9636580331498803
+      }
+    },
+    {
+      "name": "Injury prevalence",
+      "ok": false,
+      "details": {
+        "injury_next_7d_rate": 0.0
+      }
+    },
+    {
+      "name": "Missingness aligned: rhr_bpm",
+      "ok": true,
+      "details": {
+        "pct_nan": 0.022222222222222223,
+        "pct_indicator": 0.022222222222222223
+      }
+    },
+    {
+      "name": "Missingness aligned: hrv_ms",
+      "ok": true,
+      "details": {
+        "pct_nan": 0.06666666666666667,
+        "pct_indicator": 0.06666666666666667
+      }
+    },
+    {
+      "name": "Missingness aligned: sleep_hours",
+      "ok": true,
+      "details": {
+        "pct_nan": 0.03333333333333333,
+        "pct_indicator": 0.03333333333333333
+      }
+    },
+    {
+      "name": "Missingness aligned: stress_score",
+      "ok": true,
+      "details": {
+        "pct_nan": 0.1111111111111111,
+        "pct_indicator": 0.1111111111111111
+      }
+    },
+    {
+      "name": "Missingness aligned: resp_rate_rpm",
+      "ok": true,
+      "details": {
+        "pct_nan": 0.07777777777777778,
+        "pct_indicator": 0.07777777777777778
+      }
+    },
+    {
+      "name": "Missingness aligned: skin_temp_c",
+      "ok": true,
+      "details": {
+        "pct_nan": 0.14444444444444443,
+        "pct_indicator": 0.14444444444444443
+      }
+    },
+    {
+      "name": "Activity duration positive",
+      "ok": true,
+      "details": {
+        "min": 8.0,
+        "p99": 19.797199999999954
+      }
+    },
+    {
+      "name": "Activity user_id in users",
+      "ok": true,
+      "details": {
+        "n_bad": 0
+      }
+    },
+    {
+      "name": "Device worn rate",
+      "ok": false,
+      "details": {
+        "device_worn_rate": 1.0
+      }
+    }
+  ]
+}

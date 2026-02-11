@@ -1,0 +1,2 @@
+user_id,sex,age,height_cm,weight_kg,base_km_week,long_run_frac,fitness,vo2max,vo2max_adjusted,profile,rhr_base,hrv_base,hrmax,hrr,wear_rate,pace_easy_minpkm,injury_proneness,injury_resilience,rest_day_frequency,never_sprints
+1,M,51,175.4,68.8,15.79,0.282,0.15,39.4,39.4,novice,63.03,34.05,167.0,103.9,1.0,6.977,0.188,0.677,0.176,0
